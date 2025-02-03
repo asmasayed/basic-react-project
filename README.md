@@ -1,4 +1,5 @@
 THE COOKING COMPASS (My First React Project) 🍽️
+
 About the Project:
 This is my first React project, a basic recipe generator that takes user-inputted ingredients and uses the Hugging Face API to generate recipe suggestions. 
 
@@ -13,12 +14,14 @@ Hugging Face API (AI-powered recipe generation)
 Vite (React environment)
 
 Future Improvements:
+
 🔹 Allow users to select dietary preferences (e.g., vegan, keto)
 🔹 Add images of generated recipes
 🔹 Improve UI/UX with better styling
 🔹 Save favorite recipes locally
 
 Installation & Usage
+
 1️⃣ Clone the repository
 git clone https://github.com/yourusername/repository-name.git
 cd repository-name
