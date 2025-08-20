@@ -1,0 +1,65 @@
+
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        
+        {/* About Section */}
+        <div className="footer-section about-section">
+          <h3>About CareerAi</h3>
+          <p>
+            I created CareerAi to help students and professionals discover their ideal career paths 
+            through personalized assessments. As someone who understands the challenges of choosing 
+            the right career, I wanted to build a tool that provides meaningful guidance based on 
+            your interests, skills, and aspirations.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div className="footer-section links-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/form">Take Assessment</a></li>
+            <li><a href="#careers">Career Options</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+
+        {/* Connect Section */}
+        <div className="footer-section connect-section">
+          <h3>Connect With Me</h3>
+          <div className="social-links">
+            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://twitter.com/your-username" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="mailto:your.email@example.com">
+              <i className="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Bottom Section */}
+      <div className="footer-bottom">
+        <div className="footer-container">
+          <div className="bottom-content">
+            <p className="made-with-love">
+              Made with <span className="heart">❤️</span> by <strong>Asma</strong>
+            </p>
+            <p className="copyright">
+              © 2024 CareerAi. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
