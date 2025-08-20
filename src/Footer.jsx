@@ -54,9 +54,7 @@ export default function Footer() {
             <p className="made-with-love">
               Made with <span className="heart">❤️</span> by <strong>Asma</strong>
             </p>
-            <p className="copyright">
-              © 2024 CareerAi. All rights reserved.
-            </p>
+            
           </div>
         </div>
       </div>
