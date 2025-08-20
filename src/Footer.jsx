@@ -30,16 +30,16 @@ export default function Footer() {
         <div className="footer-section connect-section">
           <h3>Connect With Me</h3>
           <div className="social-links">
-            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/asma-sayed-248877348/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin"></i> LinkedIn
             </a>
-            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/asmasayed" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i> GitHub
             </a>
-            <a href="https://twitter.com/your-username" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/SayedAsma4" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter"></i> Twitter
             </a>
-            <a href="mailto:your.email@example.com">
+            <a href="mailto:sayedasma0@gmail.com">
               <i className="fas fa-envelope"></i> Email
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="footer-container">
           <div className="bottom-content">
             <p className="made-with-love">
-              Made with <span className="heart">❤️</span> by <strong>Asma</strong>
+              Made with <span className="footer-heart">❤️</span> by <strong>Asma</strong>
             </p>
             
           </div>

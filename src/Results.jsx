@@ -13,13 +13,15 @@ export default function Results() {
   const [jobRecommendations, setJobRecommendations] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [showAnswers, setShowAnswers] = useState(true); // Toggle between answers and recommendations
+  const [showRecommendations, setShowRecommendations] = useState(false); // Changed from showAnswers
 
   // Function to get career recommendations
   const getJobRecommendations = async () => {
     setIsLoading(true);
     setError(null);
     
+    // COMMENTED OUT FOR STYLING - UNCOMMENT WHEN READY TO TEST
+    /*
     try {
       const response = await getCareerRecommendations(answers);
       console.log('AI Response:', response);
@@ -36,6 +38,17 @@ export default function Results() {
     } finally {
       setIsLoading(false);
     }
+    */
+    
+    // SAMPLE DATA FOR STYLING
+    setTimeout(() => {
+      setJobRecommendations([
+        'Music Therapist', 
+        'Human Resources Manager', 
+        'Public Relations Specialist'
+      ]);
+      setIsLoading(false);
+    }, 1000); // Simulate loading time
   };
 
   // Parse the AI response to extract clean job titles
@@ -44,16 +57,20 @@ export default function Results() {
     const jobs = lines
       .filter(line => /^\d+\./.test(line.trim())) // Lines starting with numbers
       .map(line => line.replace(/^\d+\.\s*/, '').trim()) // Remove numbers and dots
-      .slice(0, 5); // Take only first 5
+      .slice(0, 3); // Take only first 3
     
-    return jobs.length === 5 ? jobs : ['Software Engineer', 'Data Scientist', 'UX Designer', 'Product Manager', 'DevOps Engineer'];
+    return jobs.length === 3 ? jobs : ['Software Engineer', 'Data Scientist', 'UX Designer', 'Product Manager', 'DevOps Engineer'];
   };
 
-  useEffect(() => {
-    if (Object.keys(answers).length > 0 && jobRecommendations.length === 0) {
+  // New function to handle showing career recommendations
+  const handleViewCareer = () => {
+    setShowRecommendations(true);
+    if (jobRecommendations.length === 0) {
       getJobRecommendations();
     }
-  }, [answers]);
+  };
+
+  // REMOVED the useEffect - no automatic API calls
 
   const handleBackHome = () => {
     navigate("/");
@@ -64,63 +81,49 @@ export default function Results() {
   };
 
   return (
-    <div className="results-container">
-      <h2>Your Career Assessment Results</h2>
-      
-      {/* Toggle Buttons */}
-      <div className="toggle-buttons">
+  <div className="results-container">
+    
+    
+    {!showRecommendations ? (
+      <>
+        <h2>Thank you! Your Form was submitted.<br/>You've just taken the first step toward building your future career!</h2>
+        <p>Your personalized career suggestions are ready. Click the button below to explore opportunities that match your skills and interests.</p>
         <button 
-          className={showAnswers ? 'active' : ''} 
-          onClick={() => setShowAnswers(true)}
+          className='btn-career'
+          onClick={handleViewCareer}
         >
-          Your Answers
+          View Results 
         </button>
-        <button 
-          className={!showAnswers ? 'active' : ''} 
-          onClick={() => setShowAnswers(false)}
-        >
-          AI Recommendations {isLoading ? '(Loading...)' : ''}
-        </button>
-      </div>
-
-      {showAnswers ? (
-        // Show user answers
-        <div className="answers-display">
-          {questions.map((question) => (
-            <div key={question.id} className="answer-item">
-              <h4>{question.title}</h4>
-              <p className="question-desc">{question.desc}</p>
-              <p className="user-answer">
-                <strong>Your Answer:</strong> {answers[question.id] || "No answer provided"}
-              </p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        // Show AI recommendations
-        <div className="recommendations-display">
-          {isLoading ? (
-            <div className="loading">Getting your personalized recommendations...</div>
-          ) : error ? (
-            <div className="error">Failed to get recommendations. Showing fallback options.</div>
-          ) : (
-            <div className="job-recommendations">
-              <h3>Your Top 5 Career Matches</h3>
+      </>
+    ) : (
+      <div className="recommendations-display">
+        {isLoading ? (
+          <div className="loading">Getting your personalized recommendations...</div>
+        ) : error ? (
+          <div className="error">Failed to get recommendations. Showing fallback options.</div>
+        ) : (
+          <div className="job-recommendations">
+            <button onClick={handleBackHome} className="btn-home">Back to Home</button>
+            <h3>Your Top 3 Career Matches:</h3>
+            <p>Based on your skills, interests, and work style, here are some career paths that could be a great fit for you. Each card gives you a quick overview and resources to get started.</p>
+            <div className="job-cards-container">
               {jobRecommendations.map((job, index) => (
-                <div key={index} className="job-card">
-                  <span className="job-number">{index + 1}</span>
-                  <span className="job-title">{job}</span>
-                </div>
-              ))}
+              <div key={index} className="job-card">
+                <span className="job-number">{index + 1}</span>
+                <span className="job-title">{job}</span> 
+              </div>
+            ))}
             </div>
-          )}
-        </div>
-      )}
-
-      <div className="action-buttons">
-        <button onClick={handleBackHome} className="btn-home">Back to Home</button>
-        <button onClick={handleRetakeQuiz} className="btn-retake">Retake Quiz</button>
-      </div>
+            <div className="action-buttons">
+      <button onClick={handleRetakeQuiz} className="btn-retake">Retake Quiz</button>
     </div>
-  );
+          </div>
+        )}
+      </div>
+    )}
+
+    
+  </div>
+);
+
 }
