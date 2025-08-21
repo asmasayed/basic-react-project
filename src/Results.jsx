@@ -42,15 +42,28 @@ export default function Results() {
   };
 
   // Parse the AI response to extract clean job titles
-  const parseJobRecommendations = (response) => {
-    const lines = response.split('\n').filter(line => line.trim());
-    const jobs = lines
-      .filter(line => /^\d+\./.test(line.trim())) // Lines starting with numbers
-      .map(line => line.replace(/^\d+\.\s*/, '').trim())//  Remove numbers and dots
-      .slice(0, 3); // Take first 3 jobs
-    
-    return jobs.length >= 3 ? jobs : ['Software Engineer', 'Data Scientist', 'UX Designer', 'Product Manager', 'DevOps Engineer'];
-  };
+  // Parse the AI response to extract clean job titles  
+const parseJobRecommendations = (response) => {
+  // Split by lines and clean up
+  const lines = response.split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0);
+  
+  const jobs = [];
+  
+  for (let line of lines) {
+    // Remove any leading numbers, dots, dashes, or spaces
+    const cleanJob = line.replace(/^[\d\.\-\s]*/, '').trim();
+    if (cleanJob && jobs.length < 3) {
+      jobs.push(cleanJob);
+    }
+  }
+  
+  console.log('Parsed jobs:', jobs); // Debug log
+  
+  return jobs.length >= 1 ? jobs : ['Software Engineer', 'Data Scientist', 'UX Designer'];
+};
+
 
   // Function to handle showing career recommendations
   const handleViewCareer = () => {
