@@ -1,44 +1,50 @@
-THE COOKING COMPASS (My First React Project) 🍽️
+🧡 CareerAi - Your Smart Career Companion
+An AI-powered career assessment platform that helps users discover personalized career paths based on their skills, interests, and work style.
 
-About the Project:
-This is my first React project, a basic recipe generator that takes user-inputted ingredients and uses the Hugging Face API to generate recipe suggestions. 
+✨ Features
+Interactive Assessment – Multi-step questionnaire on interests, skills, and aspirations
+AI Recommendations – Job matches using Hugging Face’s Mistral model
+Modern UI/UX – Clean design, smooth animations, and responsive layout
+Motivational Quotes – Auto-rotating career inspirations
+Smart Results – Click-to-reveal suggestions (saves API calls)
 
-Features:
-✅ Enter ingredients in an input field
-✅ Click "Get Recipe" to fetch a recipe suggestion
-✅ Uses Hugging Face AI for recipe generation
+🚀 Tech Stack
+Frontend: React 18, React Router
+Styling: CSS3 (gradients + animations)
+AI Integration: Hugging Face Inference API (Mistral-8x7B-Instruct)
+Build Tool: Vite
 
-Technologies Used
-React (UI & state management)
-Hugging Face API (AI-powered recipe generation)
-Vite (React environment)
+🛠️ Setup
+# Clone repo
+git clone <your-repo-url>
+cd career-ai  
 
-Future Improvements:
+# Install dependencies
+npm install  
 
-🔹 Allow users to select dietary preferences (e.g., vegan, keto)
-🔹 Add images of generated recipes
-🔹 Improve UI/UX with better styling
-🔹 Save favorite recipes locally
+# Add API key (Hugging Face)
+echo "VITE_API_KEY=hf_your_api_key" > .env  
 
-Installation & Usage
-
-1️⃣ Clone the repository
-git clone https://github.com/yourusername/repository-name.git
-cd repository-name
-
-2️⃣ Install dependencies
-npm install
-
-3️⃣ Set up your API key
-Create a .env file in the project root
-Add your Hugging Face API key:
-VITE_HUGGINGFACE_API_KEY=your_api_key_here
-
-4️⃣ Run the project
+# Run dev server
 npm run dev
 
-Contributing:
-This project is still in its early stages! Feel free to suggest ideas or contribute by opening an issue or pull request.
+📱 Usage
+Take the career questionnaire
+View AI-powered recommendations
+Explore top 5 suggested career paths
+Retake anytime for refined results
 
-License
-This project is open-source under the MIT License.
+📂 Structure
+src/
+ ├── components/       # UI Components (Heading, Form, Results, etc.)
+ ├── ai.js             # Hugging Face API integration
+ ├── questionsData.js  # Assessment questions
+ └── App.jsx           # Main app router
+
+🚀 Deployment
+npm run build
+
+
+Deploy the dist folder on Vercel, Netlify, or GitHub Pages.
+
+💡 Built with ❤️ to help people discover their perfect career path.
