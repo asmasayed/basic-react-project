@@ -156,6 +156,20 @@ body{
     width: 100%;
 }
 
+.header-questionnaire {
+  display: flex;
+  flex-direction: column;
+  justify-content:center ;
+  align-items: center;
+  margin: 20px;
+  color: #643a00;
+}
+.header-questionnaire p {
+  font-size: 16px;
+  color: #984f00;
+  text-align: center;
+}
+
 /* Questionnaire Container */
 .questionnaire {
   margin: 60px auto;

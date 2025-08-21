@@ -21,7 +21,6 @@ export default function Footer() {
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/form">Take Assessment</a></li>
-            <li><a href="#careers">Career Options</a></li>
             <li><a href="#about">About</a></li>
           </ul>
         </div>

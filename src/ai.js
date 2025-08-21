@@ -3,14 +3,12 @@ import { HfInference } from '@huggingface/inference'
 const SYSTEM_PROMPT = `
 You are a career counselor AI that analyzes a user's career assessment responses and provides personalized job recommendations. 
 
-Based on the user's interests, skills, work preferences, and career goals, suggest exactly 5 specific job titles that would be the best match for them. 
+Based on the user's interests, skills, work preferences, and career goals, suggest exactly 3 specific job titles that would be the best match for them. 
 
 Format your response as a simple numbered list with just the job titles, like:
 1. Software Engineer
 2. Data Scientist  
 3. UX Designer
-4. Product Manager
-5. DevOps Engineer
 
 Keep job titles concise and focus on roles that actually match their profile.`;
 
@@ -27,7 +25,7 @@ export async function getCareerRecommendations(userAnswers) {
       model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: `Here are my career assessment responses: ${answersString}. Please recommend 5 suitable career paths for me.` },
+        { role: "user", content: `Here are my career assessment responses: ${answersString}. Please recommend 3 suitable career paths for me.` },
       ],
       max_tokens: 200,
     })
@@ -39,8 +37,6 @@ export async function getCareerRecommendations(userAnswers) {
     // Fallback recommendations
     return `1. Software Engineer
 2. Data Scientist  
-3. UX Designer
-4. Product Manager
-5. DevOps Engineer`
+3. UX Designer`
   }
 }

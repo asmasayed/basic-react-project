@@ -46,7 +46,7 @@ export default function Slogans() {
         setIsVisible(true);
       }, 500); // Half second for fade out
       
-    }, 5000); // Change every 4 seconds
+    }, 4000); // Change every 4 seconds
 
     return () => clearInterval(interval);
   }, [slogans.length]);

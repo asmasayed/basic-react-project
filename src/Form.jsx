@@ -42,7 +42,16 @@ export default function Form() {
   const q = questions[current];
 
   return (
-    <div className="questionnaire">
+    <div>
+      <div className="header-questionnaire">
+  <h2 className="text-3xl font-bold mb-4 text-gray-800">
+    Career Questionnaire
+  </h2>
+  <p >
+    Take a few quick questions and let CareerAI guide you toward the future that matches your skills, passions, and ambitions.
+  </p>
+</div>
+      <div className="questionnaire">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <button onClick={handleBackHome} className="text-blue-500">Back</button>
@@ -90,6 +99,7 @@ export default function Form() {
   </>
 )}
      
+    </div>
     </div>
   );
 }
