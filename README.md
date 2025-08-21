@@ -48,5 +48,9 @@ npm run build
 Deploy the dist folder on Vercel, Netlify, or GitHub Pages.
 
 💡 Built with ❤️ to help people discover their perfect career path.
+
 <img width="1890" height="846" alt="1" src="https://github.com/user-attachments/assets/564b15a7-fd0a-4762-8ee2-a03dd1f3f619" />
 
+<img width="1896" height="908" alt="3" src="https://github.com/user-attachments/assets/3520ad04-2a76-4d36-a4f5-56af28f1c1f8" />
+
+<img width="1883" height="520" alt="4" src="https://github.com/user-attachments/assets/a7911558-9008-426a-a21a-ffa252dde6de" />
